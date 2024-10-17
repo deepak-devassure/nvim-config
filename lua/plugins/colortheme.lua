@@ -1,18 +1,38 @@
-    return {
-	'shaunsingh/nord.nvim',
-	lazy = false,
-	priority = 1000,
-	config = function() 
--- Example config in lua
-vim.g.nord_contrast = true
-vim.g.nord_borders = false
-vim.g.nord_disable_background = false
-vim.g.nord_italic = false
-vim.g.nord_uniform_diff_background = true
-vim.g.nord_bold = false
+   return {
 
--- Load the colorscheme
-require('nord').set()		
-	end
-    }
+	{
+		"catppuccin/nvim",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				integrations = {
+					cmp = true,
+					fidget = true,
+					gitsigns = true,
+					harpoon = true,
+					indent_blankline = {
+						enabled = false,
+						scope_color = "sapphire",
+						colored_indent_levels = false,
+					},
+					mason = true,
+					native_lsp = { enabled = true },
+					noice = true,
+					notify = true,
+					symbols_outline = true,
+					telescope = true,
+					treesitter = true,
+					treesitter_context = true,
+				},
+			})
 
+			vim.cmd.colorscheme("catppuccin-macchiato")
+
+			-- Hide all semantic highlights until upstream issues are resolved (https://github.com/catppuccin/nvim/issues/480)
+			for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+				vim.api.nvim_set_hl(0, group, {})
+			end
+		end,
+	},
+} 

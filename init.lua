@@ -1,5 +1,6 @@
 require 'core.options'
 require 'core.keymaps'
+require 'core.highlight_yank'
 
 
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -25,4 +26,12 @@ require('lazy').setup({
     require 'plugins.alpha',
     require 'plugins.indentblackline',
     require 'plugins.lazygit',
+    require 'plugins.undotree',
+    require 'plugins.nvimnotify',
+    require 'plugins.fidget',
+    require 'plugins.wilder',
+    require 'plugins.surround',
+    require 'plugins.whichkey',
+    require 'plugins.repeat',
+    require 'plugins.toggleterm',
 })

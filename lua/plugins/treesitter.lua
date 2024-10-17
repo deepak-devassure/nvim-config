@@ -13,6 +13,8 @@ return {
         'python',
         'javascript',
         'typescript',
+        'rust',
+        'git_rebase',
         'vimdoc',
         'vim',
         'regex',
