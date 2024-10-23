@@ -34,4 +34,9 @@ require('lazy').setup({
     require 'plugins.whichkey',
     require 'plugins.repeat',
     require 'plugins.toggleterm',
+    require 'plugins.autosession',
+    require 'plugins.trouble',
+    require 'plugins.comment',
+    require 'plugins.todocomments',
+    require 'plugins.substitute',
 })
