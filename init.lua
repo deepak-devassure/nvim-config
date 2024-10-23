@@ -39,4 +39,5 @@ require('lazy').setup({
     require 'plugins.comment',
     require 'plugins.todocomments',
     require 'plugins.substitute',
+    require 'plugins.tmuxnavigator',
 })
